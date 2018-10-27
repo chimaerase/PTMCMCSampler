@@ -28,7 +28,10 @@ setup(
                     + "---------\n\n"
                     + open("HISTORY.md").read(),
     package_data={"": ["README.md", "HISTORY.md"]},
-    install_requires=["numpy", "scipy"],
+    install_requires=["numpy", 
+			"scipy",
+			"acor",
+			"mpi4py"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
