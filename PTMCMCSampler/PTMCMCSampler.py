@@ -645,9 +645,9 @@ class PTSampler(object):
 
     def _writeToFile(self, iter):
         """
-        Function to write chain file. File has 3+ndim columns,
-        the first is log-posterior (unweighted), log-likelihood,
-        and acceptance probability, followed by parameter values.
+        Function to write chain file. File has ndim+4 columns,
+        the first are parameter values,  followed by log-posterior (unweighted), 
+        log-likelihood, and acceptance probability.
 
         @param iter: Iteration of sampler
 
