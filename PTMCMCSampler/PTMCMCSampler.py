@@ -16,11 +16,11 @@ except ImportError:
     print('Do not have mpi4py package.')
     from . import nompi4py as MPI
 
-try:
-    import acor
-except ImportError:
-    print('Do not have acor package')
-    pass
+# try:
+#     import acor
+# except ImportError:
+#     print('Do not have acor package')
+#     pass
 
 # try:
 #     from emcee import autocorr
