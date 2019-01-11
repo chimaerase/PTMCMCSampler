@@ -22,6 +22,12 @@ except ImportError:
     print('Do not have acor package')
     pass
 
+# try:
+#     from emcee import autocorr
+# except ImportError:
+#     print('Do not have emcee package')
+#     pass
+
 
 class PTSampler(object):
 
@@ -364,9 +370,13 @@ class PTSampler(object):
             # compute effective number of samples
             if iter % 1000 == 0 and iter > 2 * self.burn and self.MPIrank == 0:
                 try:
-                    Neff = iter / \
-                            max(1, np.nanmax([acor.acor(self._AMbuffer[self.burn:(iter - 1), ii])[0]
-                                          for ii in range(self.ndim)]))
+                    # Neff = iter / \
+                    #         max(1, np.nanmax([acor.acor(self._AMbuffer[self.burn:(iter - 1), ii])[0]
+                    #                       for ii in range(self.ndim)]))
+                    # print('\n {0} effective samples'.format(Neff))
+                    # Neff = iter / \
+                    #         max(1, np.nanmax([autocorr(self._AMbuffer[self.burn:(iter - 1), ii])[0]
+                    #                       for ii in range(self.ndim)]))
                     # print('\n {0} effective samples'.format(Neff))
                 except NameError:
                     Neff = 0
