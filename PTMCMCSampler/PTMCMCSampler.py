@@ -368,8 +368,8 @@ class PTSampler(object):
                 p0, lnlike0, lnprob0, iter)
 
             # compute effective number of samples
-            if iter % 1000 == 0 and iter > 2 * self.burn and self.MPIrank == 0:
-                try:
+            # if iter % 1000 == 0 and iter > 2 * self.burn and self.MPIrank == 0:
+                # try:
                     # Neff = iter / \
                     #         max(1, np.nanmax([acor.acor(self._AMbuffer[self.burn:(iter - 1), ii])[0]
                     #                       for ii in range(self.ndim)]))
@@ -378,9 +378,9 @@ class PTSampler(object):
                     #         max(1, np.nanmax([autocorr(self._AMbuffer[self.burn:(iter - 1), ii])[0]
                     #                       for ii in range(self.ndim)]))
                     # print('\n {0} effective samples'.format(Neff))
-                except NameError:
-                    Neff = 0
-                    pass
+                # except NameError:
+                    # Neff = 0
+                    # pass
 
             # stop if reached maximum number of iterations
             if self.MPIrank == 0 and iter >= self.Niter - 1:
