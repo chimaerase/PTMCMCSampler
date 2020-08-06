@@ -1,6 +1,5 @@
 import os
 import sys
-import numpy
 
 from setuptools import setup
 from setuptools import Extension
