@@ -2,7 +2,6 @@ import os
 import sys
 
 from setuptools import setup
-from setuptools import Extension
 
 import PTMCMCSampler
 
@@ -28,10 +27,12 @@ setup(
                     + open("HISTORY.md").read(),
     package_data={"": ["README.md", "HISTORY.md"]},
     install_requires=[
+        # use an acor fork that can be installed via pip install -e
+        "acor @ git+https://github.com/JBEI/acor.git",
+        "mpi4py",
         "numpy",
 		"scipy",
-		"acor",
-		"mpi4py"],
+	],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
